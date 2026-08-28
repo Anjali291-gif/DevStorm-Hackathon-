@@ -56,9 +56,9 @@ const config: Config = {
         },
       },
       fontFamily: {
-        display: ["var(--font-sora)", "Sora", "sans-serif"],
-        body: ["var(--font-hanken)", "Hanken Grotesk", "sans-serif"],
-        mono: ["var(--font-jetbrains)", "JetBrains Mono", "monospace"],
+        display: ["Sora", "sans-serif"],
+        body: ["'Hanken Grotesk'", "sans-serif"],
+        mono: ["'JetBrains Mono'", "monospace"],
       },
       borderRadius: {
         glass: "20px",

@@ -1,27 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Sora, Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-
-const sora = Sora({
-  subsets: ["latin"],
-  variable: "--font-sora",
-  weight: ["400", "500", "600", "700", "800"],
-  display: "swap",
-});
-
-const hanken = Hanken_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-hanken",
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
-
-const jetbrains = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-jetbrains",
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -51,9 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark scroll-smooth">
-      <body
-        className={`${sora.variable} ${hanken.variable} ${jetbrains.variable} font-body bg-background text-on-surface min-h-screen antialiased selection:bg-primary-container selection:text-white relative overflow-x-hidden`}
-      >
+      <body className="font-body bg-background text-on-surface min-h-screen antialiased selection:bg-primary-container selection:text-white relative overflow-x-hidden">
         {children}
       </body>
     </html>
