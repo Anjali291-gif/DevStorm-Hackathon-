@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { ArrowRight, AlertTriangle, ChefHat, Scan } from 'lucide-react';
-import Image from 'next/image';
+import { ThreeFridgeCanvas } from './ThreeFridgeCanvas';
 
 interface HeroSectionProps {
   onExploreFridge: () => void;
@@ -23,7 +23,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center relative z-10">
         {/* Left Column: Headlines & Call to Actions */}
-        <div className="lg:col-span-7 flex flex-col gap-6 max-w-2xl">
+        <div className="lg:col-span-6 flex flex-col gap-6 max-w-2xl">
           {/* Tagline Badge */}
           <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full glass-panel border border-tertiary/30 w-max shadow-[0_0_20px_rgba(68,214,254,0.15)]">
             <span className="relative flex h-2 w-2">
@@ -100,48 +100,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           </div>
         </div>
 
-        {/* Right Column: Smart Fridge Image */}
-        <div className="lg:col-span-5 relative flex items-center justify-center">
+        {/* Right Column: Interactive 3D Smart Fridge */}
+        <div className="lg:col-span-6 relative flex items-center justify-center">
           {/* Neon glow rings behind fridge */}
-          <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-tertiary/20 via-transparent to-primary/10 blur-2xl -z-10 scale-110" />
-          <div className="w-full rounded-3xl overflow-hidden relative group">
-            {/* HUD Overlay — top */}
-            <div className="absolute top-3 left-3 right-3 z-10 flex items-center justify-between pointer-events-none">
-              <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full glass-panel border border-tertiary/40 backdrop-blur-md">
-                <span className="text-tertiary text-[10px] font-mono font-bold">🌡 4°C</span>
-              </div>
-              <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full glass-panel border border-primary/40 backdrop-blur-md">
-                <span className="text-primary text-[10px] font-mono font-bold">💧 65%</span>
-              </div>
-            </div>
-
-            {/* Fridge Image */}
-            <Image
-              src="/smart-fridge.jpg"
-              alt="Smart Fridge with fresh vegetables and fruits"
-              width={600}
-              height={750}
-              className="w-full h-auto object-cover"
-              priority
-            />
-
-            {/* HUD Overlay — bottom */}
-            <div className="absolute bottom-3 left-3 right-3 z-10 flex items-center justify-between pointer-events-none">
-              <div className="flex items-center gap-3 px-3 py-1.5 rounded-full glass-panel border border-white/20 backdrop-blur-md">
-                <span className="text-white/70 text-[9px] font-mono">🌡 4°C</span>
-                <div className="w-px h-3 bg-white/20" />
-                <span className="text-white/70 text-[9px] font-mono">💧 65%</span>
-              </div>
-              <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-full glass-panel border border-tertiary/40 backdrop-blur-md">
-                <span className="text-tertiary text-[9px] font-mono tracking-wide">⟳ DRAG TO ROTATE 3D VIEW</span>
-              </div>
-            </div>
-
-            {/* Corner neon glow accent */}
-            <div className="absolute inset-0 rounded-3xl ring-1 ring-tertiary/30 shadow-[inset_0_0_40px_rgba(68,214,254,0.08)] pointer-events-none" />
-          </div>
+          <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-tertiary/25 via-transparent to-primary/15 blur-3xl -z-10 scale-105" />
+          
+          {/* Interactive 3D Canvas */}
+          <ThreeFridgeCanvas />
         </div>
       </div>
     </section>
   );
 };
+
