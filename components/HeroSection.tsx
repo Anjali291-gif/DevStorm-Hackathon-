@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { ArrowRight, AlertTriangle, ChefHat, Scan } from 'lucide-react';
-import { ThreeFridgeCanvas } from './ThreeFridgeCanvas';
+import { InteractiveFridgeCard } from './InteractiveFridgeCard';
 
 interface HeroSectionProps {
   onExploreFridge: () => void;
@@ -102,11 +102,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
         {/* Right Column: Interactive 3D Smart Fridge */}
         <div className="lg:col-span-6 relative flex items-center justify-center">
-          {/* Neon glow rings behind fridge */}
-          <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-tertiary/25 via-transparent to-primary/15 blur-3xl -z-10 scale-105" />
-          
-          {/* Interactive 3D Canvas */}
-          <ThreeFridgeCanvas />
+          {/* Interactive 3D Fridge Card */}
+          <InteractiveFridgeCard />
         </div>
       </div>
     </section>
